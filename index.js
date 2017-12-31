@@ -1,6 +1,6 @@
 'use strict';
 
-// customized for this use-case
+// Customized for this use-case
 const isObject = x =>
 	typeof x === 'object' &&
 	x !== null &&
@@ -28,10 +28,10 @@ module.exports = function mapObj(obj, fn, opts, seen) {
 	for (const key of Object.keys(obj)) {
 		const val = obj[key];
 		const res = fn(key, val, obj);
-		if(!res){
+		if (!res) {
 			continue;
 		}
-		
+
 		let newVal = res[1];
 
 		if (opts.deep && isObject(newVal)) {
